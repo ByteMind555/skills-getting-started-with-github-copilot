@@ -89,8 +89,10 @@ section h3 {
 }
 
 .participants-list {
-  list-style: disc;
-  margin-left: 20px;
+  /* hide default bullets; we'll render custom inline items with a delete icon */
+  list-style: none;
+  margin: 0;
+  padding: 0;
   color: #444;
   font-size: 14px;
   max-height: 120px;
@@ -100,6 +102,52 @@ section h3 {
 
 .participants-list li {
   margin-bottom: 6px;
+}
+
+/* Participant item layout */
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.participant-email {
+  color: #222;
+  word-break: break-all;
+  font-size: 14px;
+}
+
+.delete-btn {
+  /* Square, Windows-style button with subtle border and centered SVG */
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #c62828; /* icon color */
+  cursor: pointer;
+  padding: 0;
+  border-radius: 6px;
+  transition: background-color 0.12s, transform 0.06s;
+}
+
+.delete-btn:hover {
+  background-color: rgba(198, 40, 40, 0.06);
+  transform: translateY(-1px);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+.delete-btn:focus {
+  outline: 2px solid rgba(26, 35, 126, 0.18);
+  outline-offset: 2px;
 }
 
 /* Subtle style for empty state */
